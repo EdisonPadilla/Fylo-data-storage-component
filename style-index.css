@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+:root {
+  --pale-blue: hsl(243, 100%, 93%);
+  --grayish-blue: hsl(229, 7%, 55%);
+  --dark-blue: hsl(228, 56%, 26%);
+  --very-dark-blue: hsl(229, 57%, 11%);
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  height: 100vh;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--pale-blue);
+  background-color: var(--very-dark-blue, midnightblue);
+}
+
+body::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 50%;
+  top: 50%;
+  left: 0;
+  background-image: url(./images/bg-desktop.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+article {
+  width: 65%;
+  min-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto;
+  grid-column-gap: 2em;
+}
+
+#section-one {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  padding: 2.5em 6em 2.5em 2.5em;
+  background-color: var(--dark-blue, darkblue);
+  border-radius: 6px 84px 6px 6px;
+}
+
+#container-logo {
+  margin: 0em 0em 1em 0em;
+}
+
+#container-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#container-icons figure {
+  margin: 1em 0em 0em 0em;
+  height: 40px;
+  width: 40px;
+  background-color: var(--very-dark-blue, midnightblue);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#section-two {
+  grid-column: 2/3;
+  height: auto;
+  padding: 1.5em 2.5em;
+  background-color: var(--dark-blue, darkblue);
+  border-radius: 6px;
+  align-self: end;
+}
+
+#etiqueta-valor {
+  position: absolute;
+  top: 37%;
+  left: 70%;
+  width: auto;
+  padding: 0.75em 1em;
+  color: var(--grayish-blue, gray);
+  background-color: var(--pale-blue, mintcream);
+  border-radius: 6px;
+}
+
+#etiqueta-valor::before {
+  position: absolute;
+  content: "";
+  top: 74%;
+  left: 89%;
+  width: auto;
+  padding: 0.75em 0.5em;
+  background-color: var(--pale-blue, mintcream);
+  transform: skewY(45deg);
+}
+
+#etiqueta-valor span {
+  color: var(--very-dark-blue, midnightblue);
+  font-size: 2em;
+  font-weight: 700;
+}
+
+#text {
+  color: var(--grayish-blue, gray);
+}
+
+#text span {
+  color: var(--pale-blue, mintcream);
+  font-weight: 700;
+}
+
+#progress-bar-container {
+  height: 1em;
+  background-color: var(--very-dark-blue, midnightblue);
+  border-radius: 0.5em;
+}
+
+#progress-bar {
+  height: 0.7em;
+  width: 75%;
+  background-image: linear-gradient(
+    to right,
+    #ffa399,
+    #ff9092,
+    #ff7b8f,
+    #ff6591,
+    #ff4c96
+  );
+  border: solid 0.15em var(--very-dark-blue, midnightblue);
+  border-radius: 0.5em;
+}
+
+#point {
+  height: 0.5em;
+  width: 0.5em;
+  margin-left: 97.5%;
+  background-color: var(--pale-blue, mintcream);
+  border-radius: 50%;
+  border: solid 0.1em var(--pale-blue, mintcream);
+}
+
+#rango-valores {
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+}
+
+#rango-valores p {
+  margin: 0.5em 0em 1em 0em;
+}
+
+.attribution {
+  padding: 1.5em 0em;
+  font-size: 0.8em;
+  color: var(--pale-blue);
+  text-align: center;
+}
+
+.attribution a {
+  padding-bottom: 0.25em;
+  text-decoration: none;
+  color: #ff4c96;
+  border-bottom: solid 0.5px transparent;
+  animation-name: colorA;
+  animation-duration: 3s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  transition-duration: 0.5s;
+}
+
+.attribution a:hover {
+  cursor: pointer;
+  border-bottom-color: #ff4c96;
+  border-bottom-width: 1px;
+}
+
+@media (max-width: 414px) {
+  body {
+    margin: 5% 0%;
+  }
+
+  body::before {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url(./images/bg-mobile.png);
+  }
+
+  article {
+    width: 90%;
+    min-width: auto;
+    display: grid;
+    grid-template-columns: none;
+    grid-template-rows: repeat(2, auto);
+    grid-column-gap: none;
+    grid-row-gap: 2em;
+  }
+
+  #section-one {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  #section-two {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  #etiqueta-valor {
+    top: 73%;
+    left: 33%;
+  }
+
+  #etiqueta-valor::before {
+    display: none;
+  }
+}
+
+@keyframes colorA {
+  0% {
+    color: #ff4c96;
+  }
+  25% {
+    color: #ff6591;
+  }
+  50% {
+    color: #ff9092;
+  }
+  75% {
+    color: #ff6591;
+  }
+  100% {
+    color: #ff4c96;
+  }
+}
